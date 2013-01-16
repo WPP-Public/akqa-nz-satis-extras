@@ -1,0 +1,21 @@
+{
+    "name": "heyday/statis-build",
+    "description": "Builds a statis build file and appropriate zip's from git tags",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/process": "v2.1.6",
+        "symfony/console": "v2.1.6",
+        "composer/satis": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Cam Spiers",
+            "email": "cameron@heyday.co.nz"
+        }
+    ],
+    "autoload": {
+    	"psr-0": { "Heyday\\Satis": "src/" }
+    },
+    "bin": [ "bin/satis" ],
+    "minimum-stability": "dev"
+}

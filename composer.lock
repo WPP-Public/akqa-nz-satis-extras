@@ -1,0 +1,428 @@
+{
+    "hash": "250ff59e1aa653b496b3630e931baf7b",
+    "packages": [
+        {
+            "name": "composer/composer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/composer",
+                "reference": "8ebf4455f05531c0d5826ac144c50fa9389819a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/composer/composer/archive/8ebf4455f05531c0d5826ac144c50fa9389819a2.zip",
+                "reference": "8ebf4455f05531c0d5826ac144c50fa9389819a2",
+                "shasum": ""
+            },
+            "require": {
+                "justinrainbow/json-schema": "1.1.*",
+                "seld/jsonlint": "1.*",
+                "php": ">=5.3.2",
+                "symfony/console": ">=2.1,<3.0",
+                "symfony/finder": ">=2.1,<3.0",
+                "symfony/process": ">=2.1,<3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.7.10.0,<3.8"
+            },
+            "suggest": {
+                "ext-zip": "Enabling the zip extension allows you to unzip archives, and allows gzip compression of all internet traffic",
+                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages"
+            },
+            "time": "2013-01-14 19:02:07",
+            "bin": [
+                "bin/composer"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Composer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                }
+            ],
+            "description": "Dependency Manager",
+            "homepage": "http://getcomposer.org/",
+            "keywords": [
+                "package",
+                "dependency",
+                "autoload"
+            ]
+        },
+        {
+            "name": "composer/satis",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/satis",
+                "reference": "0da0ee0f34ba8eaf81f8b0329d0fa9a35c4d5d51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/composer/satis/archive/0da0ee0f34ba8eaf81f8b0329d0fa9a35c4d5d51.zip",
+                "reference": "0da0ee0f34ba8eaf81f8b0329d0fa9a35c4d5d51",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "composer/composer": "1.0.*@dev",
+                "twig/twig": ">=1.7,<2.0",
+                "symfony/console": ">=2.1,<3.0",
+                "symfony/process": ">=2.1,<3.0"
+            },
+            "time": "2012-12-09 10:42:20",
+            "bin": [
+                "bin/satis"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Satis": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                }
+            ],
+            "description": "Simple Repository Generator",
+            "homepage": "https://github.com/composer/satis",
+            "keywords": [
+                "generator",
+                "package",
+                "repository"
+            ]
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/justinrainbow/json-schema.git",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/justinrainbow/json-schema/zipball/v1.1.0",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-01-02 16:33:17",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "JsonSchema": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "NewBSD"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                },
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com",
+                    "homepage": "http://digitalkaoz.net"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ]
+        },
+        {
+            "name": "seld/jsonlint",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/Seldaek/jsonlint",
+                "reference": "1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Seldaek/jsonlint/archive/1.1.0.zip",
+                "reference": "1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-13 18:26:19",
+            "bin": [
+                "bin/jsonlint"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Seld\\JsonLint": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "JSON Linter",
+            "keywords": [
+                "json",
+                "parser",
+                "linter",
+                "validator"
+            ]
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.1.6",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console",
+                "reference": "v2.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Console/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-12-13 17:42:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder",
+                "reference": "446d30218496a3cb2a866464903a9405efc7208e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Finder/archive/446d30218496a3cb2a866464903a9405efc7208e.zip",
+                "reference": "446d30218496a3cb2a866464903a9405efc7208e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-11 17:38:19",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v2.1.6",
+            "target-dir": "Symfony/Component/Process",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Process",
+                "reference": "v2.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Process/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-12-19 13:27:19",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Process": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/fabpot/Twig.git",
+                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fabpot/Twig/archive/3111e1265db1026323c589a5bd2d152871d7bbab.zip",
+                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2013-01-08 16:56:12",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ]
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "composer/satis": 20
+    }
+}
