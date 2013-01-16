@@ -9,8 +9,6 @@ use Composer\Util\Filesystem;
 class SatisGitDriver extends GitDriver
 {
 
-    protected $dynamicComposerInformation = false;
-
     public function initialize()
     {
         $fs = new Filesystem();
