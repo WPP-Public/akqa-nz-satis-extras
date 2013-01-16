@@ -59,7 +59,7 @@ class SatisGitDriver extends GitDriver
         if (!isset($this->infoCache[$identifier])) {
             $composer = $this->getGitComposerInformation($identifier);
             if (!$composer) {
-                $composerConfig = isset($this->repoConfig['composer_config']) ? $this->repoConfig['composer_config'] : array();
+                $composerConfig = isset($this->repoConfig['composer-config']) ? $this->repoConfig['composer-config'] : array();
                 if (isset($composerConfig[$identifier])) {
                     $composer = $composerConfig[$identifier];
                 } elseif (isset($composerConfig['*'])) {
