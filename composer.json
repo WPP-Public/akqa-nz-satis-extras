@@ -1,6 +1,6 @@
 {
-    "name": "heyday/statis-build",
-    "description": "Builds a statis build file and appropriate zip's from git tags",
+    "name": "heyday/statis-extras",
+    "description": "Provides as new git driver SatisGitDriver which allows access to dist zips in statis repos.",
     "require": {
         "php": ">=5.3.3",
         "symfony/process": "v2.1.6",

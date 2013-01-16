@@ -1,5 +1,5 @@
 {
-    "hash": "250ff59e1aa653b496b3630e931baf7b",
+    "hash": "a8c7c6503da10de207ea4a57c006b33c",
     "packages": [
         {
             "name": "composer/composer",
@@ -372,18 +372,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab"
+                "reference": "2a7d317cf95cfcd2a9106ad14e4864bbf8bd78a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/3111e1265db1026323c589a5bd2d152871d7bbab.zip",
-                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab",
+                "url": "https://github.com/fabpot/Twig/archive/2a7d317cf95cfcd2a9106ad14e4864bbf8bd78a4.zip",
+                "reference": "2a7d317cf95cfcd2a9106ad14e4864bbf8bd78a4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-08 16:56:12",
+            "time": "2013-01-15 20:09:30",
             "type": "library",
             "extra": {
                 "branch-alias": {
