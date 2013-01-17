@@ -23,7 +23,7 @@ class ConfigAdd extends ConfigInit
     {
         $dialog = $this->getHelperSet()->get('dialog');
 
-        $repos = $this->getSatisGitRepositories($input, $output);
+        $repos = $this->getRepositories($input, $output);
 
         $json = new JsonFile($input->getOption('file'));
 

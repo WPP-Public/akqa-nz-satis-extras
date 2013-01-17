@@ -11,14 +11,7 @@ class Factory extends ComposerFactory
 {
     protected function createRepositoryManager(IOInterface $io, Config $config)
     {
-        $rm = new RepositoryManager($io, $config);
-        $rm->setRepositoryClass('composer', 'Composer\Repository\ComposerRepository');
-        $rm->setRepositoryClass('vcs', 'Composer\Repository\VcsRepository');
-        $rm->setRepositoryClass('package', 'Composer\Repository\PackageRepository');
-        $rm->setRepositoryClass('pear', 'Composer\Repository\PearRepository');
-        $rm->setRepositoryClass('git', 'Composer\Repository\VcsRepository');
-        $rm->setRepositoryClass('svn', 'Composer\Repository\VcsRepository');
-        $rm->setRepositoryClass('hg', 'Composer\Repository\VcsRepository');
+        $rm = parent::createRepositoryManager($io, $config);
         $rm->setRepositoryClass('satis-git', 'Heyday\Satis\Repository\SatisGitRepository');
 
         return $rm;

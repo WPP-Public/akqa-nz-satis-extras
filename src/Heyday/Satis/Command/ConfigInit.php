@@ -35,7 +35,7 @@ class ConfigInit extends Command
             );
     }
 
-    protected function getSatisGitRepositories(InputInterface $input, OutputInterface $output)
+    protected function getRepositories(InputInterface $input, OutputInterface $output)
     {
         $dialog = $this->getHelperSet()->get('dialog');
 
@@ -47,23 +47,49 @@ class ConfigInit extends Command
             $answer = $dialog->ask(
                 $output,
                 $dialog->getQuestion(
-                    'Do you want to add a satis-git repository',
+                    'Do you want to add a repository',
                     'yes'
                 ),
                 'yes'
             );
 
             if ($answer == 'yes') {
+
+                $type = $dialog->askAndValidate(
+                    $output,
+                    $dialog->getQuestion(
+                        'What type is the repository?',
+                        'satis-git'
+                    ),
+                    function ($answer) {
+                        $types = array(
+                            'composer',
+                            'vcs',
+                            'pear',
+                            'git',
+                            'svn',
+                            'hg',
+                            'satis-git'
+                        );
+                        if (!in_array($answer, $types)) {
+                            throw new \RuntimeException('Repository type must be one of the following: ' . implode(', ', $types));
+                        }
+                        return $answer;
+                    },
+                    false,
+                    'satis-git'
+                );
+
                 $url = $dialog->ask(
                     $output,
                     $dialog->getQuestion(
-                        'What is the url of the git repository?'
+                        'What is the url of the repository?'
                     ),
                     null
                 );
 
                 $repos[] = array(
-                    'type' => 'satis-git',
+                    'type' => $type,
                     'url' => $url
                 );
             } else {
@@ -102,7 +128,7 @@ class ConfigInit extends Command
         $options = array(
             'name' => $name,
             'homepage' => $homepage,
-            'repositories' => $this->getSatisGitRepositories($input, $output),
+            'repositories' => $this->getRepositories($input, $output),
             'require-all' => true
         );
 
