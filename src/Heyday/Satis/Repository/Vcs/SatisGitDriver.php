@@ -35,7 +35,7 @@ class SatisGitDriver extends GitDriver
             if (!file_exists($zip)) {
                 $result = null;
                 $this->process->execute("git archive --format=zip --output=\"$zip\" $identifier", $result, $this->repoDir);
-                if (!$this->getGitComposerInformation($identifier)) {
+                if ($this->getGitComposerInformation($identifier)) {
                     $composerFile = new JsonFile($this->webCacheDir . 'composer.json');
                     $composerFile->write($this->getComposerInformation($identifier));
                     if (0 !== $this->process->execute("zip -g $zip composer.json", $result, $this->webCacheDir)) {
