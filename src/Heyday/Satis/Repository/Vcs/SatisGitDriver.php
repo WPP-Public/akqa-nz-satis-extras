@@ -54,27 +54,39 @@ class SatisGitDriver extends GitDriver
         }
     }
 
+    protected function getDynamicComposerInformationByIdentifier($composerInformation, $identifier)
+    {
+        if (isset($composerInformation[$identifier])) {
+            return $composerInformation[$identifier];
+        } elseif (isset($composerInformation['*'])) {
+            return $composerInformation['*'];
+        }
+        return false;
+    }
+
     public function getComposerInformation($identifier)
     {
         if (!isset($this->infoCache[$identifier])) {
             $composer = $this->getGitComposerInformation($identifier);
             if (!$composer) {
-                $composerConfig = isset($this->repoConfig['composer-config']) ? $this->repoConfig['composer-config'] : array();
-                if (isset($composerConfig[$identifier])) {
-                    $composer = $composerConfig[$identifier];
-                } elseif (isset($composerConfig['*'])) {
-                    $composer = $composerConfig['*'];
-                } else {
+                if (isset($this->repoConfig['composer-config'])) {
+                    $composer = $this->getDynamicComposerInformationByIdentifier($this->repoConfig['composer-config'], $identifier);
+                }
+                if (!$composer) {
                     return;
                 }
             } else {
-
                 $composer = JsonFile::parseJson($composer, sprintf('%s:composer.json', escapeshellarg($identifier)));
-
                 if (!isset($composer['time'])) {
                     $this->process->execute(sprintf('git log -1 --format=%%at %s', escapeshellarg($identifier)), $output, $this->repoDir);
                     $date = new \DateTime('@'.trim($output), new \DateTimeZone('UTC'));
                     $composer['time'] = $date->format('Y-m-d H:i:s');
+                }
+
+                if (isset($this->repoConfig['composer-config'])) {
+                    if ($overwrite = $this->getDynamicComposerInformationByIdentifier($this->repoConfig['composer-config'], $identifier)) {
+                        $composer = array_merge($composer, $overwrite);
+                    }
                 }
 
             }
