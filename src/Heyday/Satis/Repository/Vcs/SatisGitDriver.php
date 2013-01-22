@@ -41,6 +41,12 @@ class SatisGitDriver extends GitDriver
                     if (0 !== $this->process->execute("zip -g $zip composer.json", $result, $this->webCacheDir)) {
                         return null;
                     }
+
+                    if (isset($this->repoConfig['composer-config']) && $this->getDynamicComposerInformationByIdentifier($this->repoConfig['composer-config'], $identifier)) {
+                        if (0 !== $this->process->execute("zip -d $zip composer.lock", $result, $this->webCacheDir)) {
+                            return null;
+                        }
+                    }
                 }
             }
 
